@@ -1,6 +1,6 @@
 <template>
 <div>
-    资讯
+    地址
 </div>
 </template>
 
