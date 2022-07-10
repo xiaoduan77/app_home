@@ -3,28 +3,28 @@
     <van-sticky>
       <van-nav-bar title="城市列表" left-arrow @click-left="onClickLeft" />
     </van-sticky>
-      <van-index-bar :index-list="IndexData">
-        <van-index-anchor index="">当前城市</van-index-anchor>
-        <van-cell :title="CurrentCity" />
-        <!-- <div v-for="(item,index) in CityHot" :key="index"> -->
-        <van-index-anchor index="">热门城市</van-index-anchor>
+    <van-index-bar :index-list="IndexData">
+      <van-index-anchor index="">当前城市</van-index-anchor>
+      <van-cell :title="CurrentCity" />
+      <!-- <div v-for="(item,index) in CityHot" :key="index"> -->
+      <van-index-anchor index="">热门城市</van-index-anchor>
+      <van-cell
+        :title="item.label"
+        v-for="(item, index) in CityHot"
+        :key="index"
+        @click="getCityMsg(item.label)"
+      />
+      <div v-for="(value, index) in Cityname" :key="index">
+        <van-index-anchor :index="index"></van-index-anchor>
+        <!-- {{value}} -->
         <van-cell
           :title="item.label"
-          v-for="(item, index) in CityHot"
+          v-for="(item, index) in value"
           :key="index"
           @click="getCityMsg(item.label)"
         />
-        <div v-for="(value, index) in Cityname" :key="index">
-          <van-index-anchor :index="index"></van-index-anchor>
-          <!-- {{value}} -->
-          <van-cell
-            :title="item.label"
-            v-for="(item, index) in value"
-            :key="index"
-            @click="getCityMsg(item.label)"
-          />
-        </div>
-      </van-index-bar>
+      </div>
+    </van-index-bar>
   </div>
 </template>
 
@@ -80,7 +80,9 @@ export default {
     async getCityMsg(city) {
       try {
         const res = await getCityMsg(city)
-        console.log(res)
+        // console.log(res)
+        console.log(res.data.body.value)
+        this.$store.commit('setCityId', res.data.body.value)
         if (res.data.body.label === city) {
           this.$router.push({ path: '/home', query: { city: city } })
         } else {

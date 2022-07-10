@@ -8,13 +8,25 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: {}
+    user: {},
+    city: '',
+    Cityid: '',
+    HouseCode: ''
   },
   getters: {
   },
   mutations: {
     setUser(state, payload) {
       state.user = payload
+    },
+    setCity(state, payload) {
+      state.city = payload
+    },
+    setCityId(state, payload) {
+      state.Cityid = payload
+    },
+    setCityHouseCode(state, payload) {
+      state.HouseCode = payload
     }
 
   },

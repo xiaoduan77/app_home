@@ -11,8 +11,8 @@
     </van-swipe>
     <div class="search">
       <a href="http://localhost:8080/city#/city" class="address"
-        ><span>{{city}}</span>
-        <van-icon name="arrow-down" size="12px"/>
+        ><span>{{ city }}</span>
+        <van-icon name="arrow-down" size="12px" />
       </a>
       <van-search
         v-model="value"
@@ -86,6 +86,7 @@ export default {
     this.getLunbo()
     this.getGroup()
     this.city = this.$route.query.city
+    this.$store.commit('setCity', this.city)
   },
   data() {
     return {
@@ -131,7 +132,6 @@ export default {
   font-size: 20px;
   line-height: 150px;
   text-align: center;
-  background-color: #39a9ed;
   height: 400px;
 }
 .lunbotu {

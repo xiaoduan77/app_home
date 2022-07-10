@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import { Tabbar, TabbarItem, NavBar, Form, Field, Button, Toast, Swipe, SwipeItem, Lazyload, Image as VanImage, Search, Icon, Grid, GridItem, Col, Row, Dialog, Cell, CellGroup, IndexBar, IndexAnchor, SwipeCell, Card, Tag, Divider, Empty, Uploader, Picker, ActionSheet, Popup, Sticky } from 'vant'
+import { Tabbar, TabbarItem, NavBar, Form, Field, Button, Toast, Swipe, SwipeItem, Lazyload, Image as VanImage, Search, Icon, Grid, GridItem, Col, Row, Dialog, Cell, CellGroup, IndexBar, IndexAnchor, SwipeCell, Card, Tag, Divider, Empty, Uploader, Picker, ActionSheet, Popup, Sticky, DropdownMenu, DropdownItem, Area, List } from 'vant'
+
 Vue.use(NavBar)
 Vue.use(Tabbar)
 Vue.use(TabbarItem)
@@ -32,3 +33,7 @@ Vue.use(Picker)
 Vue.use(ActionSheet)
 Vue.use(Popup)
 Vue.use(Sticky)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+Vue.use(Area)
+Vue.use(List)

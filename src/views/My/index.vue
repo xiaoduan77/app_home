@@ -12,7 +12,6 @@
       class="bg"
       v-else
     />
-
     <div class="user">
       <div class="cricle"></div>
       <van-image

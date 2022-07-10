@@ -13,6 +13,7 @@ const MyHouse = () => import('@/views/MyHouse')
 const City = () => import('@/views/City')
 const Rent = () => import('@/views/rent')
 const Search = () => import('@/views/Search')
+const Details = () => import('@/views/Details')
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,7 +34,8 @@ const routes = [
   { path: '/myhouse', component: MyHouse },
   { path: '/city', component: City },
   { path: '/rent', component: Rent },
-  { path: '/search', component: Search }
+  { path: '/search', component: Search },
+  { path: '/details', component: Details }
 ]
 
 const router = new VueRouter({
